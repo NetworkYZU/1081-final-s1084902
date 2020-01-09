@@ -28,12 +28,29 @@
           <thead>
               <tr>
                   <th>Date</th>
+                  <th style="width: 150px"><span id="Date"></span></th>
                   <th>Title</th>
+                  <th><span id="Title"></span></th>
                   <th>Content</th>
+                  <th><span id="Content"></span></th>
               </tr>
           </thead>
           <tbody>
-              
+              <script>
+              $.ajax("https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap" , {
+                data:{                    
+                    appid: "SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"                   
+                },
+                success: function(data) {
+                    $("#date").text(data.main.date);
+                    $("#title").text(data.main.title);
+                    $("#content").text(data.bootstrap.content);
+                    console.log(data.main.date);
+                    console.log(data.main.title);
+                    console.log(data.bootstrap.content);
+                }
+            });
+            </script>
           </tbody>
       </table>
     </body>
